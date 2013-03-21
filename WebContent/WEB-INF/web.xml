@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>CAR Rentals</display-name>
+  <servlet>
+    <servlet-name>carrentals</servlet-name>
+    <servlet-class>ua.kpi.carrentals.controller.CarRentals</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>carrentals</servlet-name>
+    <url-pattern>/carrentals</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>LocaleFilter</filter-name>
+    <filter-class>ua.kpi.carrentals.filters.LocaleFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LocaleFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>jsp/index.jspx</welcome-file>
+  </welcome-file-list>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+</web-app>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Utf-8" ?>
+<jsp:root 
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page contentType="text/html" pageEncoding="Utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+<html>
+<head>
+</head>
+<body>
+	<div id="page">
+		<div id="top">
+			<br />
+		</div>
+		<div id="header">
+			<ul>
+				<li><jsp:include page="login.jspx" /></li>
+			</ul>
+		</div>
+		<jsp:include page="menu.jspx" />
+		<div>
+			<ul>
+				<li><br />
+					<c:out value="${message}"></c:out>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+	</html>
+</jsp:root>

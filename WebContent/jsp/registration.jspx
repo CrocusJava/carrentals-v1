@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="Utf-8" ?>
+<jsp:root 
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" version="2.0">
+	<jsp:directive.page contentType="text/html" pageEncoding="Utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<fmt:setBundle basename="ua.kpi.carrentals.propertiefiles.text" />
+	<fmt:message key="SIGN_UP" var="sign" />
+<html>
+<head>
+</head>
+<body>
+	<div id="page">
+		<div id="top">
+			<br />
+		</div>
+		<div id="header">
+			<ul>
+				<li><jsp:include page="login.jspx" /></li>
+			</ul>
+		</div>
+		<jsp:include page="menu.jspx" />
+		<div>
+			<ul>
+				<li>
+					<form name="registration" method="POST" action="carrentals">
+						<input type="hidden" name="command" value="registration" /> 
+						<fmt:message key="USER_LOGIN"/><br />
+						<input tpye="text" name="login" value="" /><br /><br />
+						<fmt:message key="USER_PASSWORD"/><br />
+						<input type="password" name="password" value="" /><br /><br />
+						<fmt:message key="USER_NAME"/><br />
+						<input type="text" name="name" value="" /><br /><br />
+						<fmt:message key="USER_SURNAME"/><br />
+						<input type="text" name="surname" value="" /><br /><br />
+						<fmt:message key="USER_MIDDLENAME"/><br />
+						<input type="text" name="middlename" value="" /><br /><br />
+						<fmt:message key="USER_EMAIL"/><br />
+						<input type="text" name="email" value="" /><br /><br />
+						<input type="submit" value="${sign}"/>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+	</html>
+</jsp:root>

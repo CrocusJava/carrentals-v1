@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="Utf-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt" version="2.0"
+	xmlns:cartag="/WEB-INF/cartag.tld">
+	<jsp:directive.page contentType="text/html" pageEncoding="Utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<fmt:setBundle basename="ua.kpi.carrentals.propertiefiles.text" />
+	<fmt:message key="MESSAGE_CANT_MAKE_ORDER" var="cantmakeorder" />
+	<fmt:message key="MESSAGE_ENTER_LOGIN" var="enterlogin" />
+<html>
+<head>
+</head>
+<body>
+	<div id="page">
+		<div id="top">
+			<br />
+		</div>
+		<div id="header">
+			<ul>
+				<li><jsp:include page="login.jspx" /></li>
+			</ul>
+		</div>
+		<jsp:include page="menu.jspx" />
+		<div>
+			<ul>
+				<li><br />
+					<form name="login" method="POST" action="carrentals">
+						<c:choose>
+							<c:when test="${sessionScope.role=='admin'}">
+								<c:out value="${cantmakeorder}"></c:out>
+							</c:when>
+							<c:when test="${sessionScope.role=='user'}">
+								<cartag:order value="${places}" vpget="${place}" vclient="${client}" vcar="${car}" />
+							</c:when>
+							<c:otherwise>
+								<c:out value="${enterlogin}"></c:out>
+							</c:otherwise>
+						</c:choose>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+	</html>
+</jsp:root>
